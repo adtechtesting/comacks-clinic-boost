@@ -34,7 +34,7 @@ export default {
 				},
 				comacks: {
 					black: '#0a0a0a',
-					red: '#e11d48',
+					red: '#ff0000',  // Changed from #e11d48 to pure red
 					white: '#ffffff',
 				},
 				secondary: {

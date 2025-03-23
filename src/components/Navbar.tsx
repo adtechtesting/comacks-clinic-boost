@@ -35,8 +35,12 @@ const Navbar = () => {
     <nav className={navbarClasses}>
       <div className="container flex items-center justify-between py-4 px-4 md:px-6">
         <Link to="/" className="flex items-center z-50">
-          <span className="text-2xl font-bold text-comacks-white">
-            Com<span className="text-comacks-red">acks</span>
+          <span className="text-2xl font-bold">
+            <span className="text-comacks-white">Com</span>
+            <span className="text-comacks-red">a</span>
+            <span className="text-comacks-white">c</span>
+            <span className="text-comacks-red">k</span>
+            <span className="text-comacks-white">s</span>
           </span>
         </Link>
 

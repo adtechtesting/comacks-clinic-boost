@@ -11,8 +11,12 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <Link to="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold text-comacks-white">
-                Com<span className="text-comacks-red">acks</span>
+              <span className="text-2xl font-bold">
+                <span className="text-comacks-white">Com</span>
+                <span className="text-comacks-red">a</span>
+                <span className="text-comacks-white">c</span>
+                <span className="text-comacks-red">k</span>
+                <span className="text-comacks-white">s</span>
               </span>
             </Link>
             <p className="text-comacks-white/70 mb-4">
