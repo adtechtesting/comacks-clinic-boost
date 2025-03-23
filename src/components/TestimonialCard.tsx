@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface TestimonialCardProps {
   quote: string;
@@ -9,11 +10,12 @@ interface TestimonialCardProps {
   clinic: string;
   rating: number;
   imageUrl?: string;
+  className?: string;
 }
 
-const TestimonialCard = ({ quote, author, position, clinic, rating, imageUrl }: TestimonialCardProps) => {
+const TestimonialCard = ({ quote, author, position, clinic, rating, imageUrl, className }: TestimonialCardProps) => {
   return (
-    <div className="glass rounded-2xl p-6 md:p-8 border border-comacks-white/10">
+    <div className={cn("glass rounded-2xl p-6 md:p-8 border border-comacks-white/10", className)}>
       <div className="flex mb-4">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star 
