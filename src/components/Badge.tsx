@@ -11,7 +11,7 @@ const Badge = ({ children, className }: BadgeProps) => {
   return (
     <span 
       className={cn(
-        "inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-comacks-red/10 text-comacks-red",
+        "inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-comacks-red/15 text-comacks-red",
         className
       )}
     >
