@@ -12,11 +12,9 @@ const Footer = () => {
           <div>
             <Link to="/" className="inline-block mb-4">
               <span className="text-2xl font-bold">
-                <span className="text-comacks-white">Com</span>
-                <span className="text-comacks-red">a</span>
-                <span className="text-comacks-white">c</span>
-                <span className="text-comacks-red">k</span>
-                <span className="text-comacks-white">s</span>
+                <span className="text-comacks-white">Coma</span>
+                <span className="text-comacks-red">c</span>
+                <span className="text-comacks-white">ks</span>
               </span>
             </Link>
             <p className="text-comacks-white/70 mb-4">

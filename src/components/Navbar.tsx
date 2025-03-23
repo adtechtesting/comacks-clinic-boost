@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
@@ -36,11 +35,9 @@ const Navbar = () => {
       <div className="container flex items-center justify-between py-4 px-4 md:px-6">
         <Link to="/" className="flex items-center z-50">
           <span className="text-2xl font-bold">
-            <span className="text-comacks-white">Com</span>
-            <span className="text-comacks-red">a</span>
-            <span className="text-comacks-white">c</span>
-            <span className="text-comacks-red">k</span>
-            <span className="text-comacks-white">s</span>
+            <span className="text-comacks-white">Coma</span>
+            <span className="text-comacks-red">c</span>
+            <span className="text-comacks-white">ks</span>
           </span>
         </Link>
 
