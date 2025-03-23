@@ -12,7 +12,8 @@ const Footer = () => {
           <div>
             <Link to="/" className="inline-block mb-4">
               <span className="text-2xl font-bold">
-                <span className="text-comacks-white">Coma</span>
+                <span className="text-comacks-red">C</span>
+                <span className="text-comacks-white">oma</span>
                 <span className="text-comacks-red">c</span>
                 <span className="text-comacks-white">ks</span>
               </span>
