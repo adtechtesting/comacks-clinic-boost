@@ -1,9 +1,13 @@
 
-import React, { useState } from 'react';
-import { toast } from 'sonner';
-import { Send } from 'lucide-react';
 
-const ContactForm = () => {
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Send, LoaderCircle } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
+
+export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     clinicName: '',
@@ -12,9 +16,10 @@ const ContactForm = () => {
     message: '',
   });
   
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const { toast } = useToast();
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -22,22 +27,38 @@ const ContactForm = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setLoading(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success('Message sent successfully! We\'ll get back to you shortly.');
-      setFormData({
-        name: '',
-        clinicName: '',
-        email: '',
-        phone: '',
-        message: '',
+    try {
+      const res = await fetch("/https://project-nu-nine-47.vercel.app", {
+        method: "POST",
+        body: JSON.stringify(formData),
       });
-      setIsSubmitting(false);
-    }, 1500);
+      
+      if (res.status === 200) {
+        toast({
+          description: "Message sent successfully! We'll get back to you shortly."
+        });
+        
+        setFormData({
+          name: '',
+          clinicName: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      toast({ 
+        variant: "destructive", 
+        description: "Something went wrong!" 
+      });
+    } finally {
+      setLoading(false);
+    }
   };
   
   return (
@@ -47,7 +68,7 @@ const ContactForm = () => {
           <label htmlFor="name" className="block text-comacks-white mb-2 font-medium">
             Your Name *
           </label>
-          <input
+          <Input
             type="text"
             id="name"
             name="name"
@@ -63,7 +84,7 @@ const ContactForm = () => {
           <label htmlFor="clinicName" className="block text-comacks-white mb-2 font-medium">
             Clinic Name *
           </label>
-          <input
+          <Input
             type="text"
             id="clinicName"
             name="clinicName"
@@ -79,7 +100,7 @@ const ContactForm = () => {
           <label htmlFor="email" className="block text-comacks-white mb-2 font-medium">
             Email Address *
           </label>
-          <input
+          <Input
             type="email"
             id="email"
             name="email"
@@ -95,7 +116,7 @@ const ContactForm = () => {
           <label htmlFor="phone" className="block text-comacks-white mb-2 font-medium">
             Phone Number
           </label>
-          <input
+          <Input
             type="tel"
             id="phone"
             name="phone"
@@ -111,7 +132,7 @@ const ContactForm = () => {
         <label htmlFor="message" className="block text-comacks-white mb-2 font-medium">
           Message *
         </label>
-        <textarea
+        <Textarea
           id="message"
           name="message"
           value={formData.message}
@@ -123,18 +144,15 @@ const ContactForm = () => {
         />
       </div>
       
-      <button
+      <Button
         type="submit"
-        disabled={isSubmitting}
+        disabled={loading}
         className="w-full bg-comacks-red text-comacks-white py-3 px-6 rounded-lg transition-all hover:bg-comacks-red/90 hover:shadow-lg hover:shadow-comacks-red/20 flex items-center justify-center font-medium disabled:opacity-70"
       >
-        {isSubmitting ? (
+        {loading ? (
           <span className="flex items-center">
             Sending...
-            <svg className="animate-spin ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
+            <LoaderCircle className="animate-spin ml-2 h-5 w-5" />
           </span>
         ) : (
           <span className="flex items-center">
@@ -142,9 +160,7 @@ const ContactForm = () => {
             <Send className="ml-2 h-5 w-5" />
           </span>
         )}
-      </button>
+      </Button>
     </form>
   );
-};
-
-export default ContactForm;
+}

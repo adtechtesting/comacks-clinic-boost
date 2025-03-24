@@ -1,10 +1,10 @@
-
 import React, { useEffect } from 'react';
 import { Mail, Phone, MapPin, MessageSquare } from 'lucide-react';
 import SectionContainer from '@/components/SectionContainer';
 import AnimatedHeading from '@/components/AnimatedHeading';
 import Badge from '@/components/Badge';
 import ContactForm from '@/components/ContactForm';
+import { InlineWidget } from 'react-calendly';
 
 const Contact = () => {
   useEffect(() => {
@@ -29,8 +29,6 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        {/* Abstract shapes */}
         <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-comacks-red/10 rounded-full blur-3xl opacity-70"></div>
         <div className="absolute -top-24 -right-24 w-80 h-80 bg-comacks-red/10 rounded-full blur-3xl opacity-70"></div>
       </section>
@@ -44,16 +42,13 @@ const Contact = () => {
               We'd Love to Hear from You
             </AnimatedHeading>
             <p className="text-comacks-white/80 mb-8">
-              Fill out the form below and one of our specialists will get back to you within 24 hours to discuss how we can help your clinic grow.
+              Fill out the form below or book a metting with Calendly so one of our specialists will get back to you within 24 hours to discuss how we can help your clinic grow.
             </p>
-            
             <ContactForm />
           </div>
-          
           <div>
             <div className="glass rounded-2xl p-8 border border-comacks-white/10 mb-8 animate-fade-in">
               <h3 className="text-xl font-semibold mb-6 text-comacks-white">Contact Information</h3>
-              
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-comacks-red/20 p-2 rounded-lg mr-4 mt-1">
@@ -62,11 +57,10 @@ const Contact = () => {
                   <div>
                     <h4 className="text-lg font-medium mb-1 text-comacks-white">Email</h4>
                     <a href="mailto:info@comacks.com.au" className="text-comacks-white/70 hover:text-comacks-red transition-colors">
-                      info@comacks.com.au
+                      arpit@comacks.com
                     </a>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="bg-comacks-red/20 p-2 rounded-lg mr-4 mt-1">
                     <Phone className="h-5 w-5 text-comacks-red" />
@@ -74,11 +68,10 @@ const Contact = () => {
                   <div>
                     <h4 className="text-lg font-medium mb-1 text-comacks-white">Phone</h4>
                     <a href="tel:+61400000000" className="text-comacks-white/70 hover:text-comacks-red transition-colors">
-                      +61 (0) 400 000 000
+                      +91 7303908344
                     </a>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="bg-comacks-red/20 p-2 rounded-lg mr-4 mt-1">
                     <MapPin className="h-5 w-5 text-comacks-red" />
@@ -86,16 +79,14 @@ const Contact = () => {
                   <div>
                     <h4 className="text-lg font-medium mb-1 text-comacks-white">Location</h4>
                     <p className="text-comacks-white/70">
-                      Sydney, Australia
+                      New Delhi, India
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            
             <div className="glass rounded-2xl p-8 border border-comacks-white/10 animate-fade-in delay-100">
               <h3 className="text-xl font-semibold mb-6 text-comacks-white">Chat with Us</h3>
-              
               <div className="flex items-start">
                 <div className="bg-comacks-red/20 p-2 rounded-lg mr-4 mt-1">
                   <MessageSquare className="h-5 w-5 text-comacks-red" />
@@ -105,10 +96,10 @@ const Contact = () => {
                   <p className="text-comacks-white/70 mb-4">
                     Prefer to chat directly? Reach out to us on WhatsApp for quick responses.
                   </p>
-                  <a 
-                    href="https://wa.me/61400000000" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://wa.me/7303908344"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-comacks-red text-comacks-white px-4 py-2 rounded-full inline-flex items-center transition-all hover:bg-comacks-red/90"
                   >
                     <svg className="w-5 h-5 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -123,7 +114,7 @@ const Contact = () => {
         </div>
       </SectionContainer>
 
-      {/* Map Section */}
+      {/* Map Section with Calendly */}
       <SectionContainer className="bg-comacks-red/5">
         <div className="text-center mb-16">
           <Badge className="mb-4">BOOK A MEETING</Badge>
@@ -136,19 +127,10 @@ const Contact = () => {
         </div>
 
         <div className="glass rounded-2xl p-6 md:p-8 border border-comacks-white/10 overflow-hidden animate-fade-in">
-          <div className="aspect-video bg-comacks-red/5">
-            {/* Here you would embed your Calendly or other scheduling widget */}
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-comacks-white/70 mb-4">
-                  Calendly integration will be added here for easy appointment booking.
-                </p>
-                <button className="bg-comacks-red text-comacks-white px-6 py-3 rounded-lg transition-all hover:bg-comacks-red/90">
-                  Book a Free Consultation
-                </button>
-              </div>
-            </div>
-          </div>
+          <InlineWidget
+            url="https://calendly.com/03arpit04"
+            styles={{ height: '800px', width: '100%' }}
+          />
         </div>
       </SectionContainer>
     </div>

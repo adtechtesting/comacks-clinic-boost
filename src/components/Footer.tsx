@@ -24,7 +24,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/company/Comacks/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-comacks-white/70 hover:text-comacks-red transition-colors"
@@ -33,7 +33,7 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/comacks.growth/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-comacks-white/70 hover:text-comacks-red transition-colors"
@@ -104,20 +104,20 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Mail className="mr-2 h-5 w-5 text-comacks-red flex-shrink-0" />
-                <a href="mailto:info@comacks.com.au" className="text-comacks-white/70 hover:text-comacks-red transition-colors">
-                  info@comacks.com.au
+                <a href="mailto:arpit@comacks.com" className="text-comacks-white/70 hover:text-comacks-red transition-colors">
+                  arpit@comacks.com
                 </a>
               </li>
               <li className="flex items-start">
                 <Phone className="mr-2 h-5 w-5 text-comacks-red flex-shrink-0" />
                 <a href="tel:+61400000000" className="text-comacks-white/70 hover:text-comacks-red transition-colors">
-                  +61 (0) 400 000 000
+                  +91 7303908344
                 </a>
               </li>
               <li className="flex items-start">
                 <MapPin className="mr-2 h-5 w-5 text-comacks-red flex-shrink-0" />
                 <span className="text-comacks-white/70">
-                  Sydney, Australia
+                  New Delhi, India
                 </span>
               </li>
             </ul>
@@ -127,7 +127,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="border-t border-comacks-white/10 pt-8 mt-8 text-center md:flex md:justify-between md:text-left">
           <p className="text-comacks-white/60 text-sm mb-4 md:mb-0">
-            © 2025 Comacks. All Rights Reserved.
+            © 2023 Comacks. All Rights Reserved.
           </p>
           <div className="flex justify-center md:justify-end space-x-6">
             <Link to="/privacy-policy" className="text-comacks-white/60 text-sm hover:text-comacks-red transition-colors">

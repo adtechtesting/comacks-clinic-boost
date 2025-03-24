@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { ArrowRight, Zap, Code, LineChart, CheckCircle, Lightbulb, Clock, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -209,9 +208,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="mt-8">
-              <CTA />
-            </div>
+           
           </div>
           
           <div className="order-1 md:order-2 animate-fade-in-right">
@@ -292,6 +289,15 @@ const Index = () => {
             No commitments, no pressure—just actionable insights to help your clinic thrive.
           </p>
           <CTA className="py-3 px-8 text-lg" />
+        </div>
+      </SectionContainer>
+
+      {/* Credit Line */}
+      <SectionContainer className="py-8">
+        <div className="text-center">
+          <p className="text-comacks-white/70 text-sm text-white">
+            Special thanks to Mr. Akshat Rawat for his valuable contribution.
+          </p>
         </div>
       </SectionContainer>
 

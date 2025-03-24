@@ -24,7 +24,7 @@ const About = () => {
                 The Story Behind Comacks
               </AnimatedHeading>
               <p className="text-comacks-white/80 text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-fade-in">
-                Founded by a 21-year-old entrepreneur with a vision to revolutionize how healthcare clinics approach digital growth.
+         Revolutionizing how the healthcare clinics approach digital growth.
               </p>
             </div>
           </div>
@@ -47,7 +47,7 @@ const About = () => {
               Comacks was founded with a simple yet powerful vision: to help healthcare clinics grow through the power of AI and digital marketing.
             </p>
             <p className="text-comacks-white/80 mb-6">
-              Our founder, a 21-year-old entrepreneur from India, saw a gap in the market. While working with Australian healthcare providers, he noticed that many were struggling with outdated marketing approaches and missing opportunities to leverage AI for growth.
+              Comacks saw a gap in the market. While working with Australian healthcare providers, he noticed that many were struggling with outdated marketing approaches and missing opportunities to leverage AI for growth.
             </p>
             <p className="text-comacks-white/80">
               Today, Comacks is dedicated to bringing cutting-edge digital solutions to healthcare clinics across Australia, helping them attract, convert, and retain patients more effectively than ever before.

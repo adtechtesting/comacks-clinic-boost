@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
                 Privacy Policy
               </AnimatedHeading>
               <p className="text-comacks-white/80 text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-fade-in">
-                Last Updated: August 1, 2025
+                Last Updated: August 1, 2023
               </p>
             </div>
           </div>
@@ -127,9 +127,9 @@ const PrivacyPolicy = () => {
               If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
             </p>
             <p>
-              Email: info@comacks.com.au<br />
-              Phone: +61 (0) 400 000 000<br />
-              Address: Sydney, Australia
+              Email: arpit@comacks.com<br />
+              Phone:  +91 7303908344 <br />
+              Address: New Delhi
             </p>
           </div>
         </div>
