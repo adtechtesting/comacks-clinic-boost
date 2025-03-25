@@ -252,25 +252,20 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <TestimonialCard
             quote="The AI automation has completely transformed how we handle new patient inquiries. It's like having an extra staff member working 24/7!"
-            author="Dr. Sarah Johnson"
-            position="Dentist"
-            clinic="Smile Right Dental"
+          
+         
             rating={5}
             className="animate-fade-in"
           />
           <TestimonialCard
             quote="Our website conversion rate has tripled since working with Comacks. Their understanding of the healthcare space is impressive."
-            author="Michael Chen"
-            position="Practice Manager"
-            clinic="Wellness Physiotherapy"
+           
             rating={5}
             className="animate-fade-in delay-100"
           />
           <TestimonialCard
             quote="The 'No Results, No Pay' guarantee made this a no-brainer for us. They delivered beyond our expectations."
-            author="Dr. Emma Williams"
-            position="Medical Director"
-            clinic="Bayside Medical Centre"
+           
             rating={5}
             className="animate-fade-in delay-200"
           />
