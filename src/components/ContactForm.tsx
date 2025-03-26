@@ -1,5 +1,3 @@
-
-
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -32,29 +30,37 @@ export default function ContactForm() {
     setLoading(true);
     
     try {
-      const res = await fetch("/https://project-nu-nine-47.vercel.app", {
+      const res = await fetch("https://project-nu-nine-47.vercel.app/api/contact", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
       });
       
-      if (res.status === 200) {
-        toast({
-          description: "Message sent successfully! We'll get back to you shortly."
-        });
-        
-        setFormData({
-          name: '',
-          clinicName: '',
-          email: '',
-          phone: '',
-          message: '',
-        });
+      const data = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(data.message || "Failed to send message");
       }
+      
+      toast({
+        description: "Message sent successfully! We'll get back to you shortly."
+      });
+      
+      setFormData({
+        name: '',
+        clinicName: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+      
     } catch (error) {
-      console.log(error);
+      console.error("Error submitting form:", error);
       toast({ 
         variant: "destructive", 
-        description: "Something went wrong!" 
+        description: error instanceof Error ? error.message : "Something went wrong!" 
       });
     } finally {
       setLoading(false);
